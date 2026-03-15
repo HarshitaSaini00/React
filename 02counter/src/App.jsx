@@ -1,119 +1,48 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  /*  * useState is a hook that allows us to add state to our functional components.
+      * It returns an array with two elements: the current state value and a function to update that value.
+      * We can use array destructuring to assign these values to variables. */
+  /*useState hook responsible hota hai state ko change karne ke liye is change ko propagate kiya jaata hai dom ke andar */
 
+  let [counter,setCounter] =useState(0);
+  
+  /*useState array ki form me return karta hai jisme pehla element hota hai current state value aur dusra element hota hai function jo state ko update karta hai.*/
+
+ /*counter variable me current state value store hoti hai aur setCounter function ke through hum is value ko update kar sakte hai. jahan jahan bhi counter usse dikhega wo wahan wahan update kardega*/
+ 
+ /*counter ek variable hai jisme humri current value hogi jo humne useState hook me pass ki hai and setCounter function usse update karega */
+
+
+
+  const addValue =()=>{
+    
+    if(counter<20){ /*humne condition lagayi hai ki counter 20 se zyada nahi hona chahiye taki humara counter value 20 se zyada na ho jaye */
+      setCounter(counter+1)
+      
+      
+    }
+  }
+  /*addValue function me hum counter variable ko 1 se increment kar rahe hai aur phir setCounter function ke through usse update kar rahe hai. jab bhi hum setCounter function ko call karenge to react ko pata chal jayega ki state change ho gaya hai aur wo component ko re-render karega jisse updated value dom me reflect ho jayegi. */
+
+  const removeValue =() =>{
+    setCounter(counter-1)
+  }
+  
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <h1>
+      Chai aur react
+    </h1>
+    <h2>Counter value:{counter}</h2>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+    <button onClick={addValue}>Add Value</button>
+    <br />
+    <button onClick={removeValue}>Remove Value</button>
+    
     </>
   )
 }
