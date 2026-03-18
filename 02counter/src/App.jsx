@@ -22,7 +22,12 @@ function App() {
     
     if(counter<20){ /*humne condition lagayi hai ki counter 20 se zyada nahi hona chahiye taki humara counter value 20 se zyada na ho jaye */
       setCounter(counter+1)
-      
+      setCounter(counter+1)
+      setCounter(counter+1)
+      setCounter(counter+1)
+      setCounter(counter+1)
+      /*iska output same aayega kyunki useState hook batched me updates deta hai to hum bass ek kaam ko repeat kar rahe hai  */
+      setCounter((prevCounter)=>prevCounter+1) /*is tarah se hum multiple updates kar sakte hai aur react ko pata chal jayega ki hume previous state value chahiye to wo usse use kar lega aur hume correct output milega */
       
     }
   }
