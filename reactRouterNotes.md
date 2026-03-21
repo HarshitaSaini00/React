@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <header className="shadow sticky z-50 top-0">
             <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
-                <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                <div className="flex flex-wrap justify-between items-center mx-auto max-w-7xl">
                     <Link to="/" className="flex items-center">
                         <img
                             src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
@@ -63,7 +63,7 @@ export default function Header() {
 export default function Footer() {
     return (
         <footer className="bg-white border-y">
-            <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div className="mx-auto w-full max-w-7xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
@@ -230,7 +230,7 @@ export default function Home() {
     return (
         <div className="mx-auto w-full max-w-7xl">
             <aside className="relative overflow-hidden text-black rounded-lg sm:mx-16 mx-2 sm:py-16">
-                <div className="relative z-10 max-w-screen-xl px-4  pb-20 pt-10 sm:py-24 mx-auto sm:px-6 lg:px-8">
+                <div className="relative z-10 max-w-7xl px-4  pb-20 pt-10 sm:py-24 mx-auto sm:px-6 lg:px-8">
                     <div className="max-w-xl sm:mt-1 mt-80 space-y-8 text-center sm:text-right sm:ml-auto">
                         <h2 className="text-4xl font-bold sm:text-5xl">
                             Download Now
@@ -312,7 +312,7 @@ export default function About() {
 ```javascript
 export default function Contact() {
     return (
-        <div className="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
+        <div className="relative flex items-top justify-center min-h-175 bg-white sm:items-center sm:pt-0">
             <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div className="mt-8 overflow-hidden">
                     <div className="grid grid-cols-1 md:grid-cols-2">
